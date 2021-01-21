@@ -2,9 +2,16 @@ let vm = new Vue({
     el:'#app',
     data:{
         firstname: "eddy",
-        lastname : "mandran"
+        lastname : "mandran",
+        fullname: ""
     },
-    computed: {
+
+    watch: {
+        fullname: function (value){
+            console.log('watch', value)
+        }
+    }
+    /* computed: {
         fullname:{
             get: function () {
                 return this.firstname + ' ' + this.lastname
@@ -16,5 +23,5 @@ let vm = new Vue({
             }
         }
         
-    }
+    } */
 })
