@@ -1,9 +1,15 @@
-new Vue({
+let vm = new Vue({
     el:'#app',
-    data: {
-        message: 'Salut les gens',
-        link: 'http://google.fr',
-        success: true,
-        persons: ['Jonathan', 'Marion', 'Manon', 'Jean']
+    data:{
+        seconds: 0
+    },
+    mounted: function() {
+        console.log('time')
+        this.$interval=setInterval(() => {
+            this.seconds++
+        },1000)
+    },
+    destroyed: function () {
+        clearInterval(this.$interval)
     }
 })
